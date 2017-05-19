@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/button_item_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button_add_item_uri"
+        android:layout_alignStart="@+id/button_add_item_uri"
+        android:text="後" />
+
+    <Button
+        android:id="@+id/button_item_previous"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/button_item_next"
+        android:text="前"
+        android:layout_above="@+id/button_item_next" />
+
+    <Button
+        android:id="@+id/button_item_play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button_item_previous"
+        android:layout_alignStart="@+id/button_item_previous"
+        android:text="再" />
+
+    <ListView
+        android:id="@+id/album_item_listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true" />
+
+
+    <Button
+        android:id="@+id/button_add_item_uri"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:text="＋" />
+</RelativeLayout>
