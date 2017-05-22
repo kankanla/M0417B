@@ -201,8 +201,8 @@ public class Album_list extends Fragment {
             textView1 = (TextView) view.findViewById(R.id.album_album_count);
             textView.setText(cursor.getString(cursor.getColumnIndex("album_name")));
             textView1.setText("22");
-            textView1.setTextSize(42);
-            textView.setTextSize(32);
+            textView1.setTextSize(33);
+            textView.setTextSize(33);
 
             if (uri != null) {
                 imageView.setImageURI(Uri.parse(uri));
