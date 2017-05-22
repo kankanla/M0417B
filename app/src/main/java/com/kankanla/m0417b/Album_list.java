@@ -2,12 +2,8 @@ package com.kankanla.m0417b;
 
 import android.content.Context;
 import android.database.Cursor;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Point;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -23,7 +19,6 @@ import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 /**
  * Created by kankanla on 2017/05/10.
@@ -163,6 +158,8 @@ public class Album_list extends Fragment {
 
     private class Album_adapter extends BaseAdapter {
         private Cursor cursor;
+        private ImageView imageView;
+        private TextView textView, textView1;
 
         public void setCursor(Cursor cursor) {
             this.cursor = cursor;
@@ -186,36 +183,31 @@ public class Album_list extends Fragment {
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
             View view;
-            ImageView imageView;
-            TextView textView, textView1;
             cursor.moveToPosition(position);
             String uri = cursor.getString(cursor.getColumnIndex("album_icon"));
 
             if (convertView == null) {
                 view = getActivity().getLayoutInflater().inflate(R.layout.album_list_item, null);
-                view.setBackgroundResource(R.color.colorPrimary);
-                imageView = (ImageView) view.findViewById(R.id.album_imageView);
-                imageView.setMinimumHeight(img_size);
-                imageView.setMinimumWidth(img_size);
-                textView = (TextView) view.findViewById(R.id.album_album_name);
-                textView1 = (TextView) view.findViewById(R.id.album_album_count);
-                textView.setText("xxxxxxxxxxxxx555xxxxxxx");
-                textView1.setText("yyyyyyyyyyy555yyyyyyyy");
-                if (uri != null) {
-                    imageView.setImageURI(Uri.parse(uri));
-                }
+                view.setBackgroundResource(android.R.color.holo_blue_dark);
+
             } else {
                 view = convertView;
-                imageView = (ImageView) view.findViewById(R.id.album_imageView);
-                imageView.setMinimumHeight(img_size);
-                imageView.setMinimumWidth(img_size);
-                textView = (TextView) view.findViewById(R.id.album_album_name);
-                textView1 = (TextView) view.findViewById(R.id.album_album_count);
-                textView.setText("xxxxxxxxxxxxxx555xxxxxxxxxxxx");
-                textView1.setText("yyyyyyyyyyyyyyy555yyyyyyyyyy");
-                if (uri != null) {
-                    imageView.setImageURI(Uri.parse(uri));
-                }
+
+            }
+            imageView = (ImageView) view.findViewById(R.id.album_imageView);
+            imageView.setMinimumHeight(img_size);
+            imageView.setMinimumWidth(img_size);
+            textView = (TextView) view.findViewById(R.id.album_album_name);
+            textView1 = (TextView) view.findViewById(R.id.album_album_count);
+            textView.setText(cursor.getString(cursor.getColumnIndex("album_name")));
+            textView1.setText("22");
+            textView1.setTextSize(42);
+            textView.setTextSize(32);
+
+            if (uri != null) {
+                imageView.setImageURI(Uri.parse(uri));
+            } else {
+                imageView.setImageResource(R.mipmap.ic_launcher);
             }
 
             return view;
