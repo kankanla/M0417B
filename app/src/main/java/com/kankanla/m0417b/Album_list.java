@@ -199,8 +199,8 @@ public class Album_list extends Fragment {
                 imageView.setMinimumWidth(img_size);
                 textView = (TextView) view.findViewById(R.id.album_album_name);
                 textView1 = (TextView) view.findViewById(R.id.album_album_count);
-                textView.setText("xxxxxxxxxxxxxxxxxxxx");
-                textView1.setText("yyyyyyyyyyyyyyyyyyy");
+                textView.setText("xxxxxxxxxxxxx555xxxxxxx");
+                textView1.setText("yyyyyyyyyyy555yyyyyyyy");
                 if (uri != null) {
                     imageView.setImageURI(Uri.parse(uri));
                 }
@@ -211,8 +211,8 @@ public class Album_list extends Fragment {
                 imageView.setMinimumWidth(img_size);
                 textView = (TextView) view.findViewById(R.id.album_album_name);
                 textView1 = (TextView) view.findViewById(R.id.album_album_count);
-                textView.setText("xxxxxxxxxxxxxxxxxxxxxxxxxx");
-                textView1.setText("yyyyyyyyyyyyyyyyyyyyyyyyy");
+                textView.setText("xxxxxxxxxxxxxx555xxxxxxxxxxxx");
+                textView1.setText("yyyyyyyyyyyyyyy555yyyyyyyyyy");
                 if (uri != null) {
                     imageView.setImageURI(Uri.parse(uri));
                 }
